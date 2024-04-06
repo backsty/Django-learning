@@ -14,7 +14,7 @@ def bus_stations(request):
 
     current_page = int(request.GET.get('page', 1))
 
-    with open('pagination/data-398-2018-08-30.csv', encoding='utf-8') as file:
+    with open('data-398-2018-08-30.csv', encoding='utf-8') as file:
         reader = DictReader(file)
         address = []
         for i in reader:
@@ -24,7 +24,7 @@ def bus_stations(request):
                 'District': i['District']
             })
     paginator = Paginator(address, 10)
-    current_page = int(request.GEt.get('page', 1))
+    current_page = int(request.GET.get('page', 1))
     page = paginator.get_page(current_page)
     context = {
         'bus_stations': page.object_list,

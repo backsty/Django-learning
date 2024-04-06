@@ -16,10 +16,10 @@ Including another URLconf
 
 from django.urls import path
 
-from recipes.calculator.views import main_page, recipes_of_dishes
+from calculator.views import main_page, recipes_of_dishes
 
 urlpatterns = [
     # здесь зарегистрируйте вашу view-функцию
     path('', main_page, name='index'),
-    path('<dish/>', recipes_of_dishes),
+    path('<dish>/', recipes_of_dishes),
 ]
