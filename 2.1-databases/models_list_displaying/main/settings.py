@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'books',
+    'models_list_displaying.books',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +54,9 @@ MIDDLEWARE = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'netology_models_list',
+        'NAME': 'books_lib_django',
+        'USER': 'postgres',
+        'PASSWORD': 'Pro23242pro',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }

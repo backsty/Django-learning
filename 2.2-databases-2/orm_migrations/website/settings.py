@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'school',
 ]
 
@@ -74,6 +75,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'netology_orm_migrations',
+        'USER': 'postgres',
+        'PASSWORD': 'Pro23242pro',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
