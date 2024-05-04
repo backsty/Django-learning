@@ -3,11 +3,13 @@ from django.db import models
 
 
 class Product(models.Model):
+    objects = models.Manager()
     title = models.CharField(max_length=60, unique=True)
     description = models.TextField(null=True, blank=True)
 
 
 class Stock(models.Model):
+    objects = models.Manager()
     address = models.CharField(max_length=200, unique=True)
     products = models.ManyToManyField(
         Product,
@@ -33,3 +35,4 @@ class StockProduct(models.Model):
         decimal_places=2,
         validators=[MinValueValidator(0)],
     )
+    objects = models.Manager()

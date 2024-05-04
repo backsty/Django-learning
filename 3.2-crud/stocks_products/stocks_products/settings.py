@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'django_filters',
 
     'logistic',
 ]
@@ -83,6 +84,8 @@ DATABASES = {
         'NAME': 'netology_stocks_products',
         'HOST': '127.0.0.1',
         'PORT': '5432',
+        'USER': 'postgres',
+        'PASSWORD': 'Pro23242pro',
     }
 }
 
@@ -129,3 +132,20 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+     'DEFAULT_FILTER_BACKENDS': [
+         'django_filters.rest_framework.DjangoFilterBackend',
+     ],
+}
+# REST_FRAMEWORK - это словарь настроек, который позволяет настраивать различные
+# аспекты поведения DRF. Эта конкретная настройка связана с фильтрацией запросов к API.
+
+# DEFAULT_FILTER_BACKENDS - это список классов бэкендов фильтрации, которые будут
+# использоваться DRF для фильтрации наборов запросов.
+
+# DjangoFilterBackend - это класс бэкенда фильтрации, который позволяет пользователям фильтровать
+# наборы запросов с помощью синтаксиса фильтрации Django.
+
+# Этот код настраивает DRF для использования бэкенда фильтрации DjangoFilterBackend по умолчанию.
+# Это означает, что пользователи смогут фильтровать наборы запросов с помощью синтаксиса фильтрации Django
