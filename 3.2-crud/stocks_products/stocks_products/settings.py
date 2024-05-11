@@ -137,6 +137,7 @@ REST_FRAMEWORK = {
      'DEFAULT_FILTER_BACKENDS': [
          'django_filters.rest_framework.DjangoFilterBackend',
      ],
+    'PAGE_SIZE': 2,
 }
 # REST_FRAMEWORK - это словарь настроек, который позволяет настраивать различные
 # аспекты поведения DRF. Эта конкретная настройка связана с фильтрацией запросов к API.
